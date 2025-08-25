@@ -3,8 +3,8 @@ import React from "react";
 const Button = ({ children, variant = "default", size = "default", className ="", ...props }) => {
 	const variants = {
 		default: "inline-flex items-center justify-center px-5 py-3 rounded-md shadow-md transition active:scale-95",
-		primary: "inline-flex items-center justify-center px-5 py-3 rounded-md bg-green-600 text-white hover:bg-green-700",
-		secondary: "inline-flex items-center justify-center px-5 py-3 rounded-md shadow-md transition active:scale-95 bg-yellow-300 tex-gray-800 hover: bg-yellow-400"
+		primary: "inline-flex items-center justify-center px-5 py-3 rounded-md bg-[#1D3557] text-white hover:bg-blue-700",
+		secondary: "inline-flex items-center justify-center px-5 py-3 rounded-md shadow-md transition active:scale-95 bg-yellow-300 text-gray-800 hover: bg-yellow-400"
 	}
 
 	const sizes = {
