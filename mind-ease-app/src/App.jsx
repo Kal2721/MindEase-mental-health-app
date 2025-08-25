@@ -1,12 +1,24 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Button from './components/Button'
+import NavBar from './components/NavBar'
 import './App.css'
+import './index.css'
 
 function App() {
   return (
     <>
-	  <h1>Welcome to MindEase mental health app</h1>
+	  <Router>
+	  	<NavBar />
+	  	<div className="pt-20 px-6">
+	  		<Routes>
+	  			<Route path="/" element={<Welcome />} />
+	  			<Route path="/home" element={<Home />} />
+	  			<Route path="/doctors-list" element={<DoctorsList />} />
+	  			<Route path="/login" element={<Login />} />
+	  			<Route path="/signup" element={<SignUp />} />
+			</Routes>
+	  	</div>
+	  </Router>
     </>
   )
 }
