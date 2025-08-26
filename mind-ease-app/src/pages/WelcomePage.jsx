@@ -1,8 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"
 import Button from "./../components/Button"
 import image11 from "./../assets/Images/image11.jpg"
 
 const WelcomePage = () => {
+	const navigate = useNavigate();
+
 	return (
 		<div style={{ backgroundImage: `url(${image11})` }} className="min-h-screen bg-cover bg-center object-fit h-64">
 				<header className="container mx-auto px-4 py6">
@@ -21,7 +24,13 @@ const WelcomePage = () => {
 
 						<p className="text-xl text-black-600 mb-8 max-w-2xl mx-auto">Connect with licensed mental health professionals from the comfort of your home. Get the support you deserve with secure, confidential and personalized care.</p>
 						<div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-							<Button variant="primary" size="lg" className="px-8 py-4 text-lg">Get Started Today</Button>
+							<Button variant="primary" size="lg" className="px-8 py-4 text-lg" onClick={() => {
+								console.log("Button clicked")
+								navigate("/home")
+							}}
+								>
+								Get Started Today
+								</Button>
 						</div>
 					</div>
 				</main>
