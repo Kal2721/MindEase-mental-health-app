@@ -1,5 +1,4 @@
-import React from "react";
-import image15 from "./../assets/Images/image15.jpg";
+import doctors from "../../mockData.json";
 import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
@@ -21,7 +20,7 @@ const NavBar = () => {
 						Doctors and Psychiatrists
 					</NavLink>
 					<NavLink
-						to="/appointment"
+						to="`/appointment/${doctor.id}`"
 						className={({ isActive }) => `hover:text-[#3B4F7A] transition ${isActive ? "text-[#3B4F7A] font-bold" : "text-[#3B4F7A] font-semibold"}`}
 					>
 						Appointment

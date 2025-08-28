@@ -3,7 +3,7 @@ import React from 'react'
 const ChatBot = () => {
     return (
         <div>
-            <h1>sample</h1>
+            <h1>Coming soon ..</h1>
         </div>
     )
 }

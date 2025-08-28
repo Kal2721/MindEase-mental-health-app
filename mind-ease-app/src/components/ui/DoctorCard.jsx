@@ -45,14 +45,14 @@ const DoctorCard = ({ doctor }) => {
 					<Button
 						variant="primary"
 						size="small"
-						onClick={() => navigate('/appointment')}
+						onClick={() => navigate(`/appointment/${doctor.id}`)}
 					>
 						Book
 					</Button>
 					<Button
 						variant="primary"
 						size="small"
-						onClick={() => navigate()}
+						onClick={() => navigate('/Chat')}
 					>
 						Chat
 					</Button>
