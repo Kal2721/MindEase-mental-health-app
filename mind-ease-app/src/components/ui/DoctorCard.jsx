@@ -12,7 +12,7 @@ const DoctorCard = ({ doctor }) => {
 			<div className="absolute top-16 left-1/2 transform -translate-x-1/2">
 				<div className="relative">
 					<img
-						className="w-24 h-24 rounded-full border-4 border-white shadow-lg"
+						className="w-24 h-24 rounded-full border-4 border-white object-scale-down shadow-lg"
 						src={doctor.image}
 						alt={doctor.name}
 					/>
@@ -45,7 +45,7 @@ const DoctorCard = ({ doctor }) => {
 					<Button
 						variant="primary"
 						size="small"
-						onClick={() => navigate()}
+						onClick={() => navigate('/appointment')}
 					>
 						Book
 					</Button>
@@ -59,7 +59,7 @@ const DoctorCard = ({ doctor }) => {
 					<Button
 						variant="primary"
 						size="small"
-						onClick={() => navigate()}
+						onClick={() => navigate(`/doctors-profile/${doctor.id}`)}
 					>
 						Profile
 					</Button>

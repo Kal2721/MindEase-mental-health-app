@@ -20,6 +20,18 @@ const NavBar = () => {
 					>
 						Doctors and Psychiatrists
 					</NavLink>
+					<NavLink
+						to="/appointment"
+						className={({ isActive }) => `hover:text-[#3B4F7A] transition ${isActive ? "text-[#3B4F7A] font-bold" : "text-[#3B4F7A] font-semibold"}`}
+					>
+						Appointment
+					</NavLink>
+					<NavLink
+						to="/about"
+						className={({ isActive }) => `hover:text-[#3B4F7A] transition ${isActive ? "text-[#3B4F7A] font-bold" : "text-[#3B4F7A] font-semibold"}`}
+					>
+						About
+					</NavLink>
 				</div>
 			</nav>
 		</div>
