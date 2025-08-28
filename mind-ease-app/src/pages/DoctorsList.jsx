@@ -1,10 +1,13 @@
 import React from "react";
+import doctors from "../mockData.json";
+import DoctorCard from "../components/ui/DoctorCard";
 
 const DoctorsList = () => {
   return (
-    <div className="text-center py-10">
-      <h1 className="text-3xl font-bold">Doctors List</h1>
-      <p className="text-gray-600">Here you can browse available doctors.</p>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {doctors.map((doctor, index) => (
+        <DoctorCard key={index} doctor={doctor} />
+      ))}
     </div>
   );
 };
