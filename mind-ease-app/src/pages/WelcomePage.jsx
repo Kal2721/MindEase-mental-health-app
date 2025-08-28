@@ -1,13 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"
-import Button from "./../components/Button"
-import image11 from "./../assets/Images/image11.jpg"
+import Button from "./../components/ui/Button"
+import image9 from "./../assets/Images/image15.jpg"
 
 const WelcomePage = () => {
 	const navigate = useNavigate();
 
 	return (
-		<div style={{ backgroundImage: `url(${image11})` }} className="min-h-screen bg-cover bg-center object-fit h-64">
+		<div style={{ backgroundImage: `url(${image9})` }} className="min-h-screen bg-cover bg-center object-fit h-64">
 				<header className="container mx-auto px-4 py6">
 					<div className="flex items-center justify-between mt-[10px]">
 						<h1 className="text-2xl font-bold text-[#1D3557] mt-[10px]">MindEase</h1>

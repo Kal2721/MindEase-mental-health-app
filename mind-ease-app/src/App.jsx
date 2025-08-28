@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Button from './components/Button'
+import Button from './components/ui/Button'
 import NavBar from './components/NavBar'
 import Home from "./pages/Home"
 import DoctorsList from "./pages/DoctorsList"
@@ -10,7 +10,7 @@ import './index.css'
 
 function App() {
   return (
-	  <>
+	  <div>
 	  	<Router>
     			<div className="pt-20 px-6">
         			<Routes>
@@ -22,7 +22,7 @@ function App() {
         			</Routes>
     			</div>
 		</Router>
-	  </>
+	  </div>
   )
 }
 
