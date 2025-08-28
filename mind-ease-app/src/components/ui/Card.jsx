@@ -4,7 +4,7 @@ function Card({ className = "", ...props }) {
   return (
     <div
       data-slot="card"
-      className={`bg-gray-300 text-card-foreground flex flex-col gap-6 rounded-xl border ${className}`}
+      className={`bg-gradient-to-br from-[#A9ACB6] via-[#E2BB7B] to-[#BEC3C6] text-card-foreground flex flex-col gap-6 rounded-xl border ${className}`}
       {...props}
     />
   );

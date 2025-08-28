@@ -1,14 +1,24 @@
 import React from "react";
-import doctors from "../mockData.json";
+import doctorsData from "../mockData.json";
+import image15 from '../assets/images/image15.jpg';
 import DoctorCard from "../components/ui/DoctorCard";
 
-const DoctorsList = () => {
+const DoctorsList = ({ isHome = false }) => {
+  const doctors = isHome
+    ? doctorsData.doctors.slice(0, 3)
+    : doctorsData.doctors;
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {doctors.map((doctor, index) => (
-        <DoctorCard key={index} doctor={doctor} />
-      ))}
-    </div>
+    <>
+      <div style={{ backgroundImage: `url(${image15})` }} className="bg-center justify-center align-center h-24 w-full rounded-lg shadow-md mb-8 text-center flex items-center p-6">
+        <h1 className="text-4xl font-bold mb-6 text-[#1D3557] #col-span-full">Available Doctors</h1>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:justify-center sm:items-center">
+        {doctors.map((doctor) => (
+          <DoctorCard key={doctor.id} doctor={doctor} />
+        ))}
+      </div>
+    </>
   );
 };
 

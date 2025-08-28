@@ -4,22 +4,22 @@ import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
 	return (
-		<div style={{ backgroundImage: `url(${image15})` }} className="bg-cover bg-center w-full">
-			<nav style={{ backgroundImage: `url(${image15})` }} className="fixed top-0 left-0 bg-cover bg-center w-full shadow-md px-6 py-4 flex justify-center items-center z-50">
+		<div className="bg-cover bg-center w-full">
+			<nav className="bg-gradient-to-br from-[#A9ACB6] via-[#E2BB7B] to-[#BEC3C6] fixed top-0 left-0 bg-cover bg-center w-full shadow-md px-6 py-4 flex justify-center items-center">
 				<div className="flex space-x-6">
-						<NavLink 
-							to="/home" 
-							className={({ isActive }) => `hover:text-[#3B4F7A] transition ${ isActive ? "text-[#3B4F7A] font-bold" : "text-[#3B4F7A] font-semibold" }` }
-						>
-							Home
-						</NavLink>
-						
-						<NavLink 
-							to="/doctors-list"
-							className={({ isActive }) => `hover:text-[#3B4F7A] transition ${ isActive ? "text-[#3B4F7A] font-bold" : "text-[#3B4F7A] font-semibold" }` }
-						>
-							Doctors and Psychiatrists
-						</NavLink>
+					<NavLink
+						to="/home"
+						className={({ isActive }) => `hover:text-[#3B4F7A] transition ${isActive ? "text-[#3B4F7A] font-bold" : "text-[#3B4F7A] font-semibold"}`}
+					>
+						Home
+					</NavLink>
+
+					<NavLink
+						to="/doctors-list"
+						className={({ isActive }) => `hover:text-[#3B4F7A] transition ${isActive ? "text-[#3B4F7A] font-bold" : "text-[#3B4F7A] font-semibold"}`}
+					>
+						Doctors and Psychiatrists
+					</NavLink>
 				</div>
 			</nav>
 		</div>
