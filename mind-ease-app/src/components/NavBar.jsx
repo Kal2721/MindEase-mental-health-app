@@ -1,10 +1,9 @@
-import doctors from "../../mockData.json";
 import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
 	return (
 		<div className="bg-cover bg-center w-full">
-			<nav className="bg-gradient-to-br from-[#A9ACB6] via-[#E2BB7B] to-[#BEC3C6] fixed top-0 left-0 bg-cover bg-center w-full shadow-md px-6 py-4 flex justify-center items-center">
+			<nav className="bg-gradient-to-br from-[#A9ACB6] via-[#E2BB7B] to-[#BEC3C6] fixed top-0 left-0 bg-cover bg-center w-full shadow-md px-6 py-4 flex justify-center items-center z-50">
 				<div className="flex space-x-6">
 					<NavLink
 						to="/home"
@@ -19,12 +18,7 @@ const NavBar = () => {
 					>
 						Doctors and Psychiatrists
 					</NavLink>
-					<NavLink
-						to="`/appointment/${doctor.id}`"
-						className={({ isActive }) => `hover:text-[#3B4F7A] transition ${isActive ? "text-[#3B4F7A] font-bold" : "text-[#3B4F7A] font-semibold"}`}
-					>
-						Appointment
-					</NavLink>
+
 					<NavLink
 						to="/about"
 						className={({ isActive }) => `hover:text-[#3B4F7A] transition ${isActive ? "text-[#3B4F7A] font-bold" : "text-[#3B4F7A] font-semibold"}`}

@@ -32,8 +32,22 @@ const Appointment = () => {
         }
     }, [doctorId]);
 
+    // Dates available for the selected doctor
+    const selectDoctor = doctorsData.doctors.find(
+        (doc) => doc.name === form.doctor
+    );
+    const availableDates = selectDoctor ? selectDoctor.available : [];
+    const availableTimes = availableDates.find((slot) => slot.date === form.day)?.times || [];
+
     const handleChange = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
+        const { name, value } = e.target;
+        setForm((prev) => ({
+            ...prev,
+            [name]: value,
+            // Reset dependent fields
+            ...(name === 'doctor' ? { day: '', time: '' } : {}),
+            ...(name === "date" ? { time: "" } : {})
+        }));
     };
 
     const handleSubmit = (e) => {
@@ -118,33 +132,29 @@ const Appointment = () => {
                             <h3 className="text-lg font-semibold text-[#3B4F7A] mb-2">Preferred Date & Time</h3>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <select
-                                    className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#3B4F7A] focus:outline-none"
-                                    name="month"
-                                    value={form.month}
-                                    onChange={handleChange}
-                                >
-                                    <option>Month</option>
-                                    <option>August</option>
-                                    <option>September</option>
-                                </select>
-                                <select
                                     name="day"
                                     value={form.day}
                                     onChange={handleChange}
+                                    disabled={!selectDoctor}
                                     className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#3B4F7A] focus:outline-none"
                                 >
-                                    <option>Day</option>
-                                    <option>21</option>
-                                    <option>22</option>
+                                    <option value="">Select Date</option>
+                                    {availableDates.map((slot, index) => (
+                                        <option key={index} value={slot.date}>
+                                            {slot.date}
+                                        </option>
+                                    ))}
                                 </select>
                                 <select
                                     name="time"
                                     value={form.time}
                                     onChange={handleChange}
+                                    disabled={!form.day}
                                     className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#3B4F7A] focus:outline-none">
-                                    <option>Time</option>
-                                    <option>9:00 AM</option>
-                                    <option>2:00 PM</option>
+                                    <option>Select Time</option>
+                                    {availableTimes.map((time, index) => (
+                                        <option key={index} value={time}>{time}</option>
+                                    ))}
                                 </select>
                             </div>
                         </div>
@@ -168,6 +178,7 @@ const Appointment = () => {
                                 id="terms"
                                 value={form.terms}
                                 onChange={handleChange}
+                                checked={form.terms}
                                 className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-[#3B4F7A]"
                             />
                             <label
