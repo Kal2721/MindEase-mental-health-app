@@ -13,7 +13,7 @@ Doctor Detail Page → doctor’s bio, specialty, rating, reviews, and experienc
 
 Chatbot Modal → patients can start a conversation with a doctor
 
-Booking Modal → schedule a physical/online consultation with date & time
+Booking Modal → schedule a consultation with date & time
 
 About Page → learn about MindEase’s mission and values
 
